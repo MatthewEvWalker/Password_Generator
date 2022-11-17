@@ -1,12 +1,4 @@
-# Password_Generator
-This code is to create a random password using lowercase, uppercase, numbers or symbols in the password if checked. 
-
-# Features
-You can choose the amount of characters within the password, starting from 8 and upto 128 characters. This uses a scroll bar or a manual inut box. The scroll bar and input box are synced together.
-
-Everytime when the generate button is clicked, this will give you a randomized password with the length you set it as.
-
-# HTML Element Variables
+// Assignment Code
 
 // These variables are grabbed from the HTML and linked here
 var generateBtn = document.querySelector("#generate");
@@ -21,7 +13,6 @@ var symbolsElement = document.getElementById('symbols');
 var form = document.getElementById('passwordForm');
 var passwordText = document.getElementById('passwordText');
 
-# Array Variables
 
 // setting the variables to the charcode numbers specific to the checkbox options
 var uppercaseCharCode = characterArray(65, 90);
@@ -37,8 +28,6 @@ var symbolsCharCode = characterArray(33, 47).concat(
   characterArray(123, 126)
 )
 
-# Scroll And Input Box Sync
-
 // This just syncs the scroll bar to the input box range
 characterRange.addEventListener('input', syncCharacters);
 characterNumber.addEventListener('input', syncCharacters);
@@ -49,8 +38,6 @@ characterNumber.addEventListener('input', syncCharacters);
     characterRange.value = sync;
     characterNumber.value = sync;
 }
-
-# Button Submission Function and CheckBoxes
 
 // Write password to the #password input
 form.addEventListener('submit', e => {
@@ -70,8 +57,11 @@ form.addEventListener('submit', e => {
   passwordText.innerText = password;
 })
 
-# Generate Button Randomization
+// this function takes 4 parameters that have been defined earlier
 
+// this function will set lowercase as default, check if the checkboxes are checked and set up the for loop to pass in random characters into the password
+
+// String.fromCharCode();
 function generatePassword(characterAmount, uppercase, numbers, symbols) {
   // charcodes is set to the default lowercase letters
   var charCodes = lowercaseCharCode;
@@ -94,8 +84,6 @@ function generatePassword(characterAmount, uppercase, numbers, symbols) {
   return passwordCharacters.join('');
 }
 
-# CharCode Numbering Array
-
 // This array parses through the charcode to gather the id character numbers
 function characterArray(small, large) {
   const array = [];
@@ -107,3 +95,4 @@ function characterArray(small, large) {
   // return the result of array
   return array;
 }
+
